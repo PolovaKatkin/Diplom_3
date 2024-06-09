@@ -12,7 +12,6 @@ class TestAccountProfilePage:
         account_profile_page = AccountProfilePage(login)
         main_page = MainPage(login)
         main_page.go_to_account_profile()
-
         assert account_profile_page.show_header_profile_in_account_profile_page().text == 'Профиль'
 
     @allure.description('Проверка отображения личного кабинета по клику на кнопку "Личный кабинет",'
@@ -23,7 +22,6 @@ class TestAccountProfilePage:
         main_page.go_to_account_profile()
         account_profile_page.go_to_order_history_page()
         account_profile_page.wait_for_open_page(Urls.URL_MAIN_PAGE + Urls.URL_ORDER_HISTORY)
-
         assert login.current_url == Urls.URL_MAIN_PAGE + Urls.URL_ORDER_HISTORY
 
     @allure.description('Проверка выхода из аккаунта по клику на кнопку "Выход"')
@@ -33,5 +31,4 @@ class TestAccountProfilePage:
         main_page.go_to_account_profile()
         account_profile_page.logout()
         account_profile_page.wait_for_open_page(Urls.URL_MAIN_PAGE + Urls.URL_LOGIN_PAGE)
-
         assert login.current_url == Urls.URL_MAIN_PAGE + Urls.URL_LOGIN_PAGE

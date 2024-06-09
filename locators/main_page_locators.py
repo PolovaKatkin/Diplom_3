@@ -13,7 +13,7 @@ class MainPageLocators:
     # Кнопка "Конструктор"
     BUTTON_CONSTRUCTOR = (By.XPATH, "//li/a[@href = '/']")
     # Булка, первая в списке
-    BUN_FIRST_IN_LIST = (By.XPATH, '//ul[1]/a[1]')
+    BUN_FIRST_IN_LIST = (By.XPATH, '//a[@href="/ingredient/61c0c5a71d1f82001bdaaa6d"]')
     # Заголовок окна с деталями ингредиента
     HEADER_MODAL_INGREDIENT = (By.XPATH, "//h2[text() = 'Детали ингредиента']")
     INGR_MODAL = (

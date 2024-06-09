@@ -12,7 +12,6 @@ class TestForgotPasswordPage:
         main_page = MainPage(driver)
         main_page.go_to_account_profile()
         forgot_password_page.go_to_forgot_password_page()
-
         assert driver.current_url == Urls.URL_MAIN_PAGE + Urls.URL_FORGOT_PASSWORD
 
     @allure.description('Проверка, что после ввода почты и клика по кнопке "Восстановить" '
@@ -36,5 +35,4 @@ class TestForgotPasswordPage:
         forgot_password_page.set_new_password()
         forgot_password_page.click_to_button_visibility()
         element = forgot_password_page.find_element_field_password_active()
-
         assert element.is_displayed()

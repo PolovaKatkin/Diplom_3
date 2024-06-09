@@ -11,7 +11,6 @@ class TestOrderListPage:
         order_list_page = OrderListPage(driver)
         order_list_page.open_order_list_page()
         order_list_page.click_in_first_order_in_list()
-
         assert order_list_page.get_text_from_modal_window() == 'Cостав'
 
     @allure.description("Проверяем, что заказы пользователя из раздела «История заказов» "
@@ -26,7 +25,6 @@ class TestOrderListPage:
         number_order_history = account_profile_page.get_number_order_from_order_in_history_page()
         order_list_page.open_order_list_page()
         order_texts = order_list_page.collect_order_numbers()
-
         assert number_order_history in order_texts
 
     @allure.description("Проверяем, что при создании нового заказа счётчики 'Выполнено за всё время' увеличивается")
@@ -39,7 +37,6 @@ class TestOrderListPage:
         main_page.make_an_order()
         order_list_page.open_order_list_page()
         all_time_count_after = order_list_page.show_all_time_done_orders()
-
         assert all_time_count_after > all_time_count_before
 
     @allure.description("Проверяем, что при создании нового заказа счётчики 'Выполнено за сегодня' увеличивается")
@@ -52,7 +49,6 @@ class TestOrderListPage:
         main_page.make_an_order()
         order_list_page.open_order_list_page()
         today_time_count_after = order_list_page.show_today_done_orders()
-
         assert today_time_count_after > today_time_count_before
 
     @allure.description("Проверяем, что при после оформления заказа его номер появляется в разделе 'В работе'")
